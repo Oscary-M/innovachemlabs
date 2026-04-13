@@ -34,11 +34,15 @@ export const Route = createRootRoute({
       { title: "Innova Chem — Consultoría Química" },
       { name: "description", content: "Consultoría química de alta precisión" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Innova Chem — Consultoría Química" },
+      { property: "og:description", content: "Consultoría química de alta precisión" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Innova Chem — Consultoría Química" },
+      { name: "twitter:description", content: "Consultoría química de alta precisión" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c175081b-7b66-4144-afe6-9ee4630ab44e" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c175081b-7b66-4144-afe6-9ee4630ab44e" },
     ],
     links: [
       {
