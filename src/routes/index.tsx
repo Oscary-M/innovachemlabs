@@ -2,7 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BentoServices from "@/components/BentoServices";
+import ProcessSection from "@/components/ProcessSection";
+import LabSection from "@/components/LabSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -24,7 +28,11 @@ function Index() {
       <Navbar />
       <HeroSection />
       <BentoServices />
+      <ProcessSection />
+      <LabSection />
+      <ContactSection />
       <Footer />
+      <Toaster />
     </div>
   );
 }

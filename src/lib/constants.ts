@@ -1,5 +1,7 @@
 export const NAV_LINKS = ["Servicios", "Proceso", "Laboratorio", "Contacto"];
 
+export const WHATSAPP_URL = "https://wa.me/5491112345678?text=Hola%2C%20quiero%20agendar%20una%20consultor%C3%ADa";
+
 export const HERO_CONTENT = {
   headline: "Rediseñamos la esencia de tus productos.",
   subheadline:
@@ -10,9 +12,9 @@ export const HERO_CONTENT = {
 export const SERVICES = [
   {
     id: 1,
-    title: "Rediseño de Fórmulas",
+    title: "Reformulación",
     description:
-      "Optimizamos productos existentes para reducir costos o mejorar el rendimiento.",
+      "Optimizamos productos existentes para reducir costos, mejorar rendimiento y adaptarlos a nuevas regulaciones del mercado.",
     size: "large" as const,
     verb: "Auditamos",
   },
@@ -20,23 +22,55 @@ export const SERVICES = [
     id: 2,
     title: "Desarrollo I+D",
     description:
-      "Creación de formulaciones desde cero con base científica sólida.",
+      "Creación de formulaciones desde cero con base científica sólida. Desde la idea hasta el producto terminado.",
     size: "medium" as const,
     verb: "Innovamos",
   },
   {
     id: 3,
-    title: "Compliance & Seguridad",
+    title: "Pruebas de Estabilidad",
     description:
-      "Aseguramos que tu fórmula cumpla con normativas vigentes.",
+      "Ensayos de vida útil, compatibilidad de envases y estudios de estabilidad acelerada bajo normas internacionales.",
     size: "small" as const,
-    verb: "Certificamos",
+    verb: "Validamos",
   },
   {
     id: 4,
-    title: "Estabilidad",
-    description: "Pruebas de vida útil y compatibilidad.",
+    title: "Documentación Técnica",
+    description:
+      "Fichas técnicas, hojas de seguridad (MSDS), dossiers regulatorios y especificaciones de calidad.",
     size: "small" as const,
-    verb: "Potenciamos",
+    verb: "Documentamos",
   },
 ];
+
+export const PROCESS_STEPS = [
+  {
+    step: 1,
+    title: "Diagnóstico Inicial",
+    description: "Analizamos tu producto actual, entendemos tus objetivos y evaluamos las oportunidades de mejora técnica y económica.",
+  },
+  {
+    step: 2,
+    title: "Diseño de Propuesta",
+    description: "Elaboramos una propuesta técnica detallada con alternativas de formulación, costos estimados y cronograma de trabajo.",
+  },
+  {
+    step: 3,
+    title: "Desarrollo en Laboratorio",
+    description: "Ejecutamos pruebas de laboratorio, ajustes de fórmula y ensayos de estabilidad hasta alcanzar los parámetros deseados.",
+  },
+  {
+    step: 4,
+    title: "Entrega & Escalado",
+    description: "Entregamos la fórmula validada con documentación completa y acompañamos el escalado a producción industrial.",
+  },
+];
+
+export const CONTACT_INFO = {
+  phone: "+54 9 11 2345-6789",
+  email: "contacto@innovachem.com",
+  instagram: "@innovachem",
+  linkedin: "Innova Chem",
+  address: "Buenos Aires, Argentina",
+};
