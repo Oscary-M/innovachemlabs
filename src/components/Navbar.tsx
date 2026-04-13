@@ -1,4 +1,4 @@
-import { NAV_LINKS, HERO_CONTENT } from "@/lib/constants";
+import { NAV_LINKS, HERO_CONTENT, WHATSAPP_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
@@ -19,9 +19,11 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        <Button variant="heroOutline" size="sm" className="hidden sm:inline-flex px-6">
-          {HERO_CONTENT.cta}
-        </Button>
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+          <Button variant="heroOutline" size="sm" className="hidden sm:inline-flex px-6">
+            {HERO_CONTENT.cta}
+          </Button>
+        </a>
       </div>
     </nav>
   );

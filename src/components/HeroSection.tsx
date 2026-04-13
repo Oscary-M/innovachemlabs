@@ -1,15 +1,24 @@
 import { motion } from "framer-motion";
-import { HERO_CONTENT } from "@/lib/constants";
+import { HERO_CONTENT, WHATSAPP_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
     <header className="pt-40 pb-24 px-6 relative overflow-hidden">
-      {/* Gradient accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-petrol/5 to-transparent -z-10" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-petrol/5 blur-3xl -z-10" />
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-petrol/10 to-transparent -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-petrol/10 blur-3xl -z-10" />
+      <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-petrol/5 blur-2xl -z-10" />
 
       <div className="max-w-5xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-block mb-6 px-5 py-2 rounded-full bg-petrol/10 border border-petrol/20"
+        >
+          <span className="text-petrol font-bold text-sm tracking-wider uppercase">🔬 Consultoría Química de Alta Precisión</span>
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,9 +40,11 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
         >
-          <Button variant="hero" size="lg">
-            {HERO_CONTENT.cta}
-          </Button>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <Button variant="hero" size="lg" className="shadow-2xl shadow-petrol/30">
+              {HERO_CONTENT.cta}
+            </Button>
+          </a>
         </motion.div>
       </div>
     </header>
