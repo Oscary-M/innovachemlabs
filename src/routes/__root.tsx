@@ -31,7 +31,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Química [S] — Consultoría Química" },
+      { title: "Innova Chem — Consultoría Química" },
       { name: "description", content: "Consultoría química de alta precisión" },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
