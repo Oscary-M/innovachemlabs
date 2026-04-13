@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 top-0 px-4 py-4">
       <div className="max-w-7xl mx-auto bg-card/70 backdrop-blur-md border border-border/40 shadow-sm rounded-full px-6 py-3 flex justify-between items-center">
         <div className="font-bold text-petrol text-xl tracking-tight">
-          QUÍMICA <span className="opacity-60">[S]</span>
+          Innova<span className="text-petrol font-black">Chem</span>
         </div>
         <div className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
           {NAV_LINKS.map((link) => (
