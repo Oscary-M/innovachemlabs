@@ -70,8 +70,8 @@ export const PROCESS_STEPS = [
 export const CONTACT_INFO = {
   phone: "+54 9 11 31232401",
   email: "innovachemlabs@gmail.com",
-  instagram: "@innovachem",
-  instagramUrl: "https://instagram.com/innovachem",
+  instagram: "@innovachemlabs",
+  instagramUrl: "https://www.instagram.com/innovachemlabs/",
   linkedin: "Innova Chem",
   linkedinUrl: "https://linkedin.com/company/innovachem",
   address: "Buenos Aires, Argentina",
