@@ -6,15 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CONTACT_INFO, WHATSAPP_URL } from "@/lib/constants";
 import { useState } from "react";
 import { toast } from "sonner";
-import emailjs from "@emailjs/browser";
-
-// Configura estas variables en tu cuenta de EmailJS (emailjs.com):
-// 1. Crea un servicio de email (Gmail, etc.) → copia el Service ID
-// 2. Crea un template con variables: {{from_name}}, {{from_email}}, {{company}}, {{message}}
-// 3. Copia el Public Key desde Account > API Keys
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "";
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "";
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "";
+import { sendContactEmail } from "@/server/contact";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", company: "", message: "" });
@@ -24,17 +16,7 @@ export default function ContactSection() {
     e.preventDefault();
     setSending(true);
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company,
-          message: formData.message,
-        },
-        EMAILJS_PUBLIC_KEY,
-      );
+      await sendContactEmail({ data: formData });
       toast.success("¡Mensaje enviado! Nos pondremos en contacto pronto.");
       setFormData({ name: "", email: "", company: "", message: "" });
     } catch {
