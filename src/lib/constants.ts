@@ -68,8 +68,8 @@ export const PROCESS_STEPS = [
 ];
 
 export const CONTACT_INFO = {
-  phone: "+54 9 11 2345-6789",
-  email: "contacto@innovachem.com",
+  phone: "+54 9 11 31232401",
+  email: "innovachemlabs@gmail.com",
   instagram: "@innovachem",
   linkedin: "Innova Chem",
   address: "Buenos Aires, Argentina",
