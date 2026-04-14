@@ -1,6 +1,6 @@
 export const NAV_LINKS = ["Servicios", "Proceso", "Laboratorio", "Contacto"];
 
-export const WHATSAPP_URL = "https://wa.me/5491112345678?text=Hola%2C%20quiero%20agendar%20una%20consultor%C3%ADa";
+export const WHATSAPP_URL = "https://wa.me/5491131232401?text=Hola%2C%20quiero%20agendar%20una%20consultor%C3%ADa";
 
 export const HERO_CONTENT = {
   headline: "Rediseñamos la esencia de tus productos.",
@@ -71,6 +71,8 @@ export const CONTACT_INFO = {
   phone: "+54 9 11 31232401",
   email: "innovachemlabs@gmail.com",
   instagram: "@innovachem",
+  instagramUrl: "https://instagram.com/innovachem",
   linkedin: "Innova Chem",
+  linkedinUrl: "https://linkedin.com/company/innovachem",
   address: "Buenos Aires, Argentina",
 };

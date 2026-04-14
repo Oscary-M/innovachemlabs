@@ -11,25 +11,25 @@ const images = [
 
 export default function LabSection() {
   return (
-    <section id="laboratorio" className="py-24 px-6 bg-surface">
+    <section id="laboratorio" className="py-14 px-4 sm:px-6 md:py-24 bg-surface">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <span className="text-petrol font-bold text-sm uppercase tracking-widest">Donde sucede la magia</span>
-          <h2 className="text-4xl md:text-5xl font-black mt-2 mb-4 text-foreground">
+          <span className="text-petrol font-bold text-xs sm:text-sm uppercase tracking-widest">Donde sucede la magia</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-2 mb-3 md:mb-4 text-foreground">
             Nuestro Laboratorio
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
             Equipamiento de última generación en un espacio diseñado para la innovación.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {images.map((img, i) => (
             <motion.div
               key={i}
@@ -37,7 +37,7 @@ export default function LabSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl shadow-lg"
+              className="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-lg"
             >
               <img
                 src={img.src}
@@ -45,16 +45,16 @@ export default function LabSection() {
                 loading="lazy"
                 width={768}
                 height={512}
-                className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-56 sm:h-64 md:h-72 object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 md:p-6">
                 <p className="text-petrol-foreground text-sm font-medium">{img.alt}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-8 md:mt-12">
           {[
             { value: "500+", label: "Fórmulas desarrolladas" },
             { value: "98%", label: "Tasa de éxito" },
@@ -67,10 +67,10 @@ export default function LabSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-card border border-border/50"
+              className="text-center p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border/50"
             >
-              <div className="text-3xl md:text-4xl font-black text-petrol mb-1">{stat.value}</div>
-              <div className="text-muted-foreground text-sm">{stat.label}</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-black text-petrol mb-1">{stat.value}</div>
+              <div className="text-muted-foreground text-xs sm:text-sm leading-tight">{stat.label}</div>
             </motion.div>
           ))}
         </div>

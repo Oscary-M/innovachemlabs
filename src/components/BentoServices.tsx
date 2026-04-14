@@ -19,7 +19,7 @@ const cardColors = [
 
 export default function BentoServices() {
   return (
-    <section id="servicios" className="py-24 px-6 bg-surface">
+    <section id="servicios" className="py-14 px-4 sm:px-6 md:py-24 bg-surface">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -27,15 +27,15 @@ export default function BentoServices() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-petrol font-bold text-sm uppercase tracking-widest">Lo que hacemos</span>
-          <h2 className="text-4xl md:text-5xl font-black mt-2 mb-4 text-foreground">
+          <span className="text-petrol font-bold text-xs sm:text-sm uppercase tracking-widest">Lo que hacemos</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-2 mb-3 md:mb-4 text-foreground">
             Servicios Especializados
           </h2>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
+          <p className="text-muted-foreground text-base sm:text-lg mb-8 md:mb-12 max-w-2xl">
             Soluciones integrales de consultoría química para potenciar tus productos.
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 md:auto-rows-[280px]">
           {SERVICES.map((srv, i) => {
             const Icon = icons[srv.id];
             return (
@@ -45,18 +45,18 @@ export default function BentoServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`bg-gradient-to-br ${cardColors[i]} rounded-3xl p-8 border border-petrol/10 flex flex-col justify-between hover:shadow-lg hover:shadow-petrol/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer group ${
+                className={`bg-gradient-to-br ${cardColors[i]} rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 border border-petrol/10 flex flex-col justify-between hover:shadow-lg hover:shadow-petrol/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer group ${
                   srv.size === "large" ? "md:col-span-2" : ""
                 } ${srv.size === "medium" ? "md:row-span-2" : ""}`}
               >
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-petrol flex items-center justify-center mb-6 text-petrol-foreground group-hover:scale-110 transition-transform">
-                    <Icon size={26} />
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-petrol flex items-center justify-center mb-4 md:mb-6 text-petrol-foreground group-hover:scale-110 transition-transform">
+                    <Icon size={22} />
                   </div>
                   <span className="text-xs font-bold text-petrol uppercase mb-2 block tracking-widest">
                     {srv.verb}
                   </span>
-                  <h3 className="text-2xl font-bold mb-3 text-foreground">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-foreground">
                     {srv.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">

@@ -8,17 +8,17 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">
-          Page not found
+          Página no encontrada
         </h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          La página que buscás no existe o fue movida.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Volver al inicio
           </Link>
         </div>
       </div>
@@ -26,29 +26,39 @@ function NotFoundComponent() {
   );
 }
 
+const SITE_URL = "https://innovachemlabs.com";
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
+const TITLE = "Innova Chem — Consultoría Química de Alta Precisión";
+const DESCRIPTION =
+  "Rediseñamos la esencia de tus productos. Consultoría química: optimización de costos, estabilidad y rediseño de fórmulas industriales.";
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Innova Chem — Consultoría Química" },
-      { name: "description", content: "Consultoría química de alta precisión" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Innova Chem — Consultoría Química" },
-      { property: "og:description", content: "Consultoría química de alta precisión" },
+      { name: "robots", content: "index, follow" },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { name: "author", content: "Innova Chem" },
+      // Open Graph
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Innova Chem — Consultoría Química" },
-      { name: "twitter:description", content: "Consultoría química de alta precisión" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c175081b-7b66-4144-afe6-9ee4630ab44e" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c175081b-7b66-4144-afe6-9ee4630ab44e" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:locale", content: "es_AR" },
+      // Twitter / X
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@innovachem" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: SITE_URL },
+      { rel: "icon", type: "image/svg+xml", href: "/placeholder.svg" },
     ],
   }),
   shellComponent: RootShell,
@@ -58,7 +68,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>
