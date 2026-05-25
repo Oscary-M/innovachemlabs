@@ -1,6 +1,6 @@
 export const NAV_LINKS = ["Servicios", "Proceso", "Laboratorio", "Contacto"];
 
-export const WHATSAPP_URL = "https://wa.me/5491112345678?text=Hola%2C%20quiero%20agendar%20una%20consultor%C3%ADa";
+export const WHATSAPP_URL = "https://wa.me/5491131232401?text=%C2%A1Hola%20Innova!%2C%20quiero%20mas%20informacion";
 
 export const HERO_CONTENT = {
   headline: "Rediseñamos la esencia de tus productos.",
