@@ -3,16 +3,43 @@ import { Phone, Mail, MapPin, Instagram, Linkedin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CONTACT_INFO, WHATSAPP_URL } from "@/lib/constants";
+import { CONTACT_INFO, WHATSAPP_URL, CONTACT_FORM_ENDPOINT } from "@/lib/constants";
 import { useState } from "react";
 import { toast } from "sonner";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", company: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("¡Mensaje enviado! Nos pondremos en contacto pronto.");
+    // If a form endpoint is configured, POST the data there (automatic send).
+    if (CONTACT_FORM_ENDPOINT && CONTACT_FORM_ENDPOINT.length > 0) {
+      try {
+        const res = await fetch(CONTACT_FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(formData),
+        });
+        if (res.ok) {
+          toast.success("¡Mensaje enviado! Nos pondremos en contacto pronto.");
+          setFormData({ name: "", email: "", company: "", message: "" });
+        } else {
+          toast.error("Ocurrió un error al enviar. Por favor intenta más tarde.");
+        }
+      } catch (err) {
+        toast.error("Ocurrió un error al enviar. Revisa tu conexión.");
+      }
+      return;
+    }
+
+    // Fallback: open user's mail client (mailto)
+    const to = CONTACT_INFO.email;
+    const subject = encodeURIComponent(`Contacto desde sitio - ${formData.company || formData.name}`);
+    const body = encodeURIComponent(
+      `Nombre: ${formData.name}\nEmail: ${formData.email}\nEmpresa: ${formData.company}\n\nMensaje:\n${formData.message}`
+    );
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    toast.success("Se abrió tu cliente de correo para enviar el mensaje.");
     setFormData({ name: "", email: "", company: "", message: "" });
   };
 

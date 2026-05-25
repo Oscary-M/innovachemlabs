@@ -74,3 +74,7 @@ export const CONTACT_INFO = {
   linkedin: "Innova Chem",
   address: "Buenos Aires, Argentina",
 };
+
+// Optional: set this to your Formspree endpoint or other form endpoint that accepts JSON POSTs.
+// Example Formspree endpoint: "https://formspree.io/f/yourId"
+export const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/xeedlpol";
